@@ -1,5 +1,6 @@
 package ua.pylypchenko.authservice.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -13,6 +14,7 @@ public class Account {
 
     private String name;
 
+    @Column(length = 70)
     private String password;
 
     private boolean active;
