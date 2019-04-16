@@ -30,7 +30,10 @@ public class OAuthConfiguration extends AuthorizationServerConfigurerAdapter {
 
     @Override
     public void configure(AuthorizationServerSecurityConfigurer security) throws Exception {
-        security.passwordEncoder(passwordEncoder);
+        security
+            .passwordEncoder(passwordEncoder)
+            .checkTokenAccess("isAuthenticated()")
+            .tokenKeyAccess("permitAll()");
     }
 
     @Override
